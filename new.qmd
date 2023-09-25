@@ -35,8 +35,8 @@ Scientific references are in the footer. Opinions and figures are my own.
 
 ::: callout-tip
 # Materials
-- slides: [www.gerkovink.com/ing2023/](https://www.gerkovink.com/ing2023/)
-- source: [github.com/gerkovink/ing2023](https://github.com/gerkovink/ing2023)
+- slides: [www.gerkovink.com/AI4Managers/new.html](https://www.gerkovink.com/AI4Managers/)
+- source: [github.com/gerkovink/AI4Managers](https://github.com/gerkovink/AI4Managers)
 :::
 
 
@@ -76,10 +76,18 @@ Truths are boring, but they are convenient.
 $^1$ See [Jelke Bethlehem's CBS discussion paper](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjkyPTCs4L3AhUCuKQKHUpmBvIQFnoECAMQAw&url=https%3A%2F%2Fwww.cbs.nl%2F-%2Fmedia%2Fimported%2Fdocuments%2F2009%2F07%2F2009-15-x10-pub.pdf&usg=AOvVaw3BpUW2s_k0MB5yH1o-QGf2) for an overview of the history of survey sampling
 :::
 
-## Hebben we wel data nodig?
-Leg uit dat zonder data je nog steeds een antwoord kan vormen. 
 
-Maak een brug van data naar informatie en leg uit dat deze informatie juist datgene is wat de brug vormt tussen de waarheid en het antwoord. 
+## Do we need data?
+Without any data we can still come up with a statistically valid answer. 
+
+ - The answer will not be very *informative*. 
+ - In order for our answer to be more informative, we need more **information**
+
+Some sources of information can already tremendously guide the precision of our answe. 
+::: {.callout-warning appearance="simple"}
+# Bottom line
+Information bridges the answer to the truth. Too little information may lead you to a *false truth*
+:::
 
 ## Confidence intervals
 ::::{.columns}
