@@ -84,7 +84,7 @@ Without any data we can still come up with a statistically valid answer.
  - In order for our answer to be more informative, we need more **information**
 
 Some sources of information can already tremendously guide the precision of our answe. 
-::: {.callout-warning appearance="simple"}
+::: {.callout-note appearance="simple"}
 # Bottom line
 Information bridges the answer to the truth. Too little information may lead you to a *false truth*
 :::
