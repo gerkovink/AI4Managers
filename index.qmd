@@ -327,3 +327,93 @@ In this case the choice was made to make a **deliberate error**. The estimates o
 <center>
 <iframe width="790" height="475" src="https://www.youtube.com/embed/GiPe1OiKQuk?si=JRskAvV-ObldIOfO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>
+
+# Case study
+
+## Case 1: Defensienota
+::::{.columns}
+:::{.column width="40%"}
+![](https://imgs.xkcd.com/comics/machine_learning_2x.png){width=80%}
+:::
+:::{.column width="60%"}
+<q>
+Defensie moet operationele data kunnen verkrijgen en die verwerken tot informatie. Onze mensen en systemen gaan meer sensoren gebruiken om in het inzetgebied zicht te krijgen op de omgeving. Door die data te verwerken tot informatie en gericht te delen met andere militairen in de operatie krijgen zij snel een zo volledig mogelijk beeld. Daardoor maken ze tijdens de operatie de juiste keuzes. In dit hele proces moet onze krijgsmacht sneller kunnen schakelen dan potentiële tegenstanders; daarom investeert Defensie ook in moderne ondersteunende systemen en software. Daarbij worden ook technologieën zoals data science en Artificial Intelligence (AI) geïntegreerd in onze processen. Defensie werkt samen met kennisinstellingen, industrie, NAVO en EU om nieuwe kansen op dit vlak te benutten.
+</q>
+:::
+::::
+
+[Bron: Defensienota 2022](https://www.defensie.nl/onderwerpen/defensienota-2022/lezen)
+
+
+## Case 2: Flint water crisis
+::::{.columns}
+:::{.column width="30%"}
+![](https://www.popsci.com/uploads/2019/03/18/FFPUHFTYCJ3XFSFLJX2Z2KPHP4.png
+){width=80%}
+:::
+:::{.column width="70%"}
+### Background:
+- In 2014, Flint, Michigan, switched its water source to the Flint River.
+- The change led to lead contamination due to the lack of corrosion inhibitors.
+- Resulted in a public health crisis with dangerous levels of heavy metals in water.
+
+### Dark Data Impact:
+- The switch was motivated by cost-saving but neglected comprehensive data on water quality, infrastructure, and public health.
+- Historical data on the Flint River’s pollution and the city’s old infrastructure were overlooked.
+- Residents’ complaints and data on water quality were dismissed.
+- Independent research indicating elevated lead levels was initially ignored by officials.
+- Dark data contributed to delayed responses and increased harm.
+
+:::
+::::
+
+## Lessons Learned and Reference
+
+**Data Misinterpretation:**
+- Evidence of lead contamination was not effectively communicated or acted upon.
+
+**Final Action:**
+Hanna-Attisha et al. used children's blood lead levels data to evidence increased lead exposure, thereby finally compelling action.
+
+**Key Takeaway:**
+The Flint water crisis highlights the necessity of utilizing all available data and the dangers of neglecting dark data in decision-making.
+
+::: callout-warning
+# Vulnerability of the decision making process
+
+This example highlights how compelling evidence can still be ignored if stakeholder management and the data-answer pipeline are not properly governed. 
+:::
+
+::: footer
+Hanna-Attisha, M., LaChance, J., Sadler, R. C., & Champney Schnepp, A. (2016). Elevated Blood Lead Levels in Children Associated With the Flint Drinking Water Crisis: A Spatial Analysis of Risk and Public Health Response. American journal of public health, 106(2), 283–290. https://doi.org/10.2105/AJPH.2015.303003
+:::
+
+## Case 3: IBM Watson for Oncology
+::::{.columns}
+:::{.column width="30%"}
+![](https://cdn-heamn.nitrocdn.com/QwmNANDJzoOQGYxvvetRZNxDbJRusvGr/assets/images/optimized/rev-e46abfe/accelerationeconomy.com/wp-content/uploads/2022/03/IBM-Watson.png){width=80%}
+:::
+:::{.column width="70%"}
+
+IBM's Watson for Oncology was touted as a revolutionary AI system that could assist oncologists in diagnosing and treating cancer by providing personalized treatment recommendations. It was expected to analyze vast amounts of medical data, including research papers, clinical trial data, and patient records, to help doctors make informed decisions.
+:::
+::::
+
+## Discontinued
+- It worked really well for many cases
+- It would kill some patients
+
+::: callout-warning
+# Vulnerability of the training process
+One of the central issues was how Watson was trained. Instead of being fed a diverse and comprehensive set of real patient data, it was often trained on hypothetical patients and synthetic data. 
+
+**Essential information** such as detailed patient histories, various unstructured data like doctors' notes, real-world patient outcomes, and diverse datasets from different populations and geographies were not adequately included in the training dataset.
+
+**Holistic**: Watson for Oncology was making recommendations without a holistic understanding of the patient and the broader medical context.
+:::
+
+
+
+
+
+

@@ -684,6 +684,99 @@ Information that is not available but necessary to arrive at the correct answer.
 <iframe width="790" height="475" src="https://www.youtube.com/embed/GiPe1OiKQuk?si=JRskAvV-ObldIOfO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
 </iframe>
 </center>
+</section></section>
+<section>
+<section id="case-study" class="title-slide slide level1 center">
+<h1>Case study</h1>
+
+</section>
+<section id="case-1-defensienota" class="slide level2">
+<h2>Case 1: Defensienota</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="https://imgs.xkcd.com/comics/machine_learning_2x.png" style="width:80.0%"></p>
+</div><div class="column" style="width:60%;">
+<p><q> Defensie moet operationele data kunnen verkrijgen en die verwerken tot informatie. Onze mensen en systemen gaan meer sensoren gebruiken om in het inzetgebied zicht te krijgen op de omgeving. Door die data te verwerken tot informatie en gericht te delen met andere militairen in de operatie krijgen zij snel een zo volledig mogelijk beeld. Daardoor maken ze tijdens de operatie de juiste keuzes. In dit hele proces moet onze krijgsmacht sneller kunnen schakelen dan potentiële tegenstanders; daarom investeert Defensie ook in moderne ondersteunende systemen en software. Daarbij worden ook technologieën zoals data science en Artificial Intelligence (AI) geïntegreerd in onze processen. Defensie werkt samen met kennisinstellingen, industrie, NAVO en EU om nieuwe kansen op dit vlak te benutten. </q></p>
+</div>
+</div>
+<p><a href="https://www.defensie.nl/onderwerpen/defensienota-2022/lezen">Bron: Defensienota 2022</a></p>
+</section>
+<section id="case-2-flint-water-crisis" class="slide level2">
+<h2>Case 2: Flint water crisis</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="https://www.popsci.com/uploads/2019/03/18/FFPUHFTYCJ3XFSFLJX2Z2KPHP4.png" style="width:80.0%"></p>
+</div><div class="column" style="width:70%;">
+<h3 id="background">Background:</h3>
+<ul>
+<li>In 2014, Flint, Michigan, switched its water source to the Flint River.</li>
+<li>The change led to lead contamination due to the lack of corrosion inhibitors.</li>
+<li>Resulted in a public health crisis with dangerous levels of heavy metals in water.</li>
+</ul>
+<h3 id="dark-data-impact">Dark Data Impact:</h3>
+<ul>
+<li>The switch was motivated by cost-saving but neglected comprehensive data on water quality, infrastructure, and public health.</li>
+<li>Historical data on the Flint River’s pollution and the city’s old infrastructure were overlooked.</li>
+<li>Residents’ complaints and data on water quality were dismissed.</li>
+<li>Independent research indicating elevated lead levels was initially ignored by officials.</li>
+<li>Dark data contributed to delayed responses and increased harm.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="lessons-learned-and-reference" class="slide level2">
+<h2>Lessons Learned and Reference</h2>
+<p><strong>Data Misinterpretation:</strong> - Evidence of lead contamination was not effectively communicated or acted upon.</p>
+<p><strong>Final Action:</strong> Hanna-Attisha et al.&nbsp;used children’s blood lead levels data to evidence increased lead exposure, thereby finally compelling action.</p>
+<p><strong>Key Takeaway:</strong> The Flint water crisis highlights the necessity of utilizing all available data and the dangers of neglecting dark data in decision-making.</p>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Vulnerability of the decision making process</strong></p>
+</div>
+<div class="callout-content">
+<p>This example highlights how compelling evidence can still be ignored if stakeholder management and the data-answer pipeline are not properly governed.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Hanna-Attisha, M., LaChance, J., Sadler, R. C., &amp; Champney Schnepp, A. (2016). Elevated Blood Lead Levels in Children Associated With the Flint Drinking Water Crisis: A Spatial Analysis of Risk and Public Health Response. American journal of public health, 106(2), 283–290. https://doi.org/10.2105/AJPH.2015.303003</p>
+</div>
+</section>
+<section id="case-3-ibm-watson-for-oncology" class="slide level2">
+<h2>Case 3: IBM Watson for Oncology</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="https://cdn-heamn.nitrocdn.com/QwmNANDJzoOQGYxvvetRZNxDbJRusvGr/assets/images/optimized/rev-e46abfe/accelerationeconomy.com/wp-content/uploads/2022/03/IBM-Watson.png" style="width:80.0%"></p>
+</div><div class="column" style="width:70%;">
+<p>IBM’s Watson for Oncology was touted as a revolutionary AI system that could assist oncologists in diagnosing and treating cancer by providing personalized treatment recommendations. It was expected to analyze vast amounts of medical data, including research papers, clinical trial data, and patient records, to help doctors make informed decisions.</p>
+</div>
+</div>
+</section>
+<section id="discontinued" class="slide level2">
+<h2>Discontinued</h2>
+<ul>
+<li>It worked really well for many cases</li>
+<li>It would kill some patients</li>
+</ul>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Vulnerability of the training process</strong></p>
+</div>
+<div class="callout-content">
+<p>One of the central issues was how Watson was trained. Instead of being fed a diverse and comprehensive set of real patient data, it was often trained on hypothetical patients and synthetic data.</p>
+<p><strong>Essential information</strong> such as detailed patient histories, various unstructured data like doctors’ notes, real-world patient outcomes, and diverse datasets from different populations and geographies were not adequately included in the training dataset.</p>
+<p><strong>Holistic</strong>: Watson for Oncology was making recommendations without a holistic understanding of the patient and the broader medical context.</p>
+</div>
+</div>
+</div>
 
 <img src="mice.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>Gerko Vink @ AI for Managers - Sep 28, 2023, Utrecht</p>
