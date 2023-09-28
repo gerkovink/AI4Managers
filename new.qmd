@@ -23,7 +23,7 @@ format:
     scrollable: false
     width: 1200
     reference-location: margin
-    footer: Gerko Vink @ ING - Sep 14, 2023, Amsterdam
+    footer: Gerko Vink @ AI for Managers - Sep 28, 2023, Utrecht
     standalone: true
 ---
 
@@ -31,7 +31,7 @@ format:
 
 I owe a debt of gratitude to many people as the thoughts and code in these slides are the process of years-long development cycles and discussions with my team, friends, colleagues and peers. When someone has contributed to the content of the slides, I have credited their authorship.
 
-Scientific references are in the footer. Opinions and figures are my own.
+Scientific references are in the footer. Opinions and figures are my own, AI-generated or directly linked.
 
 ::: callout-tip
 # Materials
@@ -83,22 +83,23 @@ Without any data we can still come up with a statistically valid answer.
  - The answer will not be very *informative*. 
  - In order for our answer to be more informative, we need more **information**
 
-Some sources of information can already tremendously guide the precision of our answe. 
-::: {.callout-note appearance="simple"}
-# Bottom line
-Information bridges the answer to the truth. Too little information may lead you to a *false truth*
+Some sources of information can already tremendously guide the precision of our answer. 
+
+::: {.callout-tip}
+# In Short
+Information bridges the answer to the truth. Too little information may lead you to a *false truth*. 
 :::
 
-## Confidence intervals
+## Confidence in the answer
 ::::{.columns}
-:::{.column width="70%"}
+:::{.column width="60%"}
 ![](img/7. confidence_intervals.png){width="90%"}
 :::
 
-::: {.column width="30%"}
-Confidence intervals can be hugely informative!
+::: {.column width="40%"}
+An intuitive approach to evaluating an answer is confidence. In statistics, we often use confidence intervals. Discussing confidence can be hugely informative!
 
-If we sample 100 samples from a population, then a *95% CI* will cover the population value at least 95 out of 100 times. 
+If we sample 100 samples from a population, then a *95% CI* will cover the **true** population value [at least 95 out of 100 times]{style="text-decoration: underline;"}. 
 
 - If the coverage <95: bad estimation process with risk of errors and invalid inference
 - If the coverage >95: inefficient estimation process, but correct conclusions and valid inference. Lower statistical power. 
@@ -106,36 +107,40 @@ If we sample 100 samples from a population, then a *95% CI* will cover the popul
 ::::
 
 ::: footer 
-Neyman, J. (1934). On the Two Different Aspects of the Representative Method: The Method of Stratified Sampling and the Method of Purposive Selection. Journal of the Royal Statistical Society Series A: Statistics in Society, 97(4), 558-606.
+Neyman, J. (1934). On the Two Different Aspects of the Representative Method: The Method of Stratified Sampling and the Method of Purposive Selection. <br> Journal of the Royal Statistical Society Series A: Statistics in Society, 97(4), 558-606.
 :::
 
-## The other type of intervals
+## On the individual level
 ::::{.columns}
 :::{.column width="60%"}
 ![](img/8. prediction_intervals.png){width="90%"}
 :::
 
 ::: {.column width="40%"}
-Prediction intervals can also be hugely informative!
+Individual intervals can also be hugely informative!
 
-Prediction intervals are generally wider than confidence intervals
+Individual intervals are generally wider than confidence intervals
 
-- This is because it covers inherent uncertainty in the data point on top of sampling uncertainty
-- Just like CIs, PIs will become more narrow (for locations) where more information is observed (less uncertainty)
-- Usually this is at the location of the mean of the predicted values.
+- This is because it covers inherent uncertainty in the data point on top of sampling uncertainty 
 
-<br>
-**Narrower intervals mean less uncertainty. It does not mean less bias!**
+::: {.callout-warning}
+Narrower intervals mean less uncertainty. 
+
+It does not mean that the answer is correct!
+:::
 
 :::
 ::::
 
 ## Case: Spaceshuttle Challenger
-<div style="float: left; width: 40%;">
-![](img/chal.jpg){width=100%}
-</div>
-<div style="float: right; width: 50%;">
-```{r failure, echo = FALSE, message=FALSE, warning=FALSE, fig.height = 3.5, fig.width=4}
+36 years ago, on 28 January 1986, 73 seconds into its flight and at an altitude of 9 miles, the space shuttle Challenger experienced an enormous fireball caused by one of its two booster rockets and broke up. The crew compartment continued its trajectory, reaching an altitude of 12 miles, before falling into the Atlantic. All seven crew members, consisting of five astronauts and two payload specialists, were killed.
+
+::::{.columns}
+:::{.column width="40%"}
+![](img/chal.jpg){width=90%}
+:::
+:::{.column width="60%"}
+```{r failure, echo = FALSE, message=FALSE, warning=FALSE, fig.height = 4, fig.width=6}
 library(tidyverse)
 library(ggplot2)
 library(alr4)
@@ -146,41 +151,47 @@ Challeng %>%
   geom_point() +
   #geom_(height = .1, width = .01) + 
   geom_smooth(method = "lm", se = FALSE) +
-  ylim(0, 5) + xlim(35, 85) + 
+  ylim(0, 5) + xlim(52, 76) + 
   ylab("Number of distressed O−rings at each launch") +
   xlab("Temperature in degrees Fahrenheit") + 
   theme_classic()
 ```
-</div>
-<div style="clear: both;"></div>
-36 years ago, on 28 January 1986, 73 seconds into its flight and at an altitude of 9 miles, the space shuttle Challenger experienced an enormous fireball caused by one of its two booster rockets and broke up. The crew compartment continued its trajectory, reaching an altitude of 12 miles, before falling into the Atlantic. All seven crew members, consisting of five astronauts and two payload specialists, were killed.
+:::
+::::
 
 ## Nothing happened, so we ignored it
-<div style="float: left; width: 50%;">
-```{r darkdata, echo = FALSE, message=FALSE, warning=FALSE, fig.width = 4}
+
+::::{.columns}
+:::{.column width="50%"}
+```{r darkdata, echo = FALSE, message=FALSE, warning=FALSE, fig.width = 5}
 set.seed(123)
 Challeng %>% 
   ggplot(aes(temp, fail)) +
   geom_point() + 
   geom_smooth(method = "lm", se = FALSE) +
-  ylim(0, 5) + xlim(35, 85) + 
+  ylim(0, 5) + xlim(52, 76) + 
   ylab("Number of distressed O−rings at each launch") +
   xlab("Temperature in degrees Fahrenheit") + 
   theme_classic()
-
 ```
-</div>
-<div style="float: right; width: 50%;">
-In de besluitvorming om de launch wel door te laten gaan was sprake van dark data.
+:::
+:::{.column width="50%"}
+In the decision to proceed with the launch, there was a presence of dark data. And no-one noticed!
 
-***Dark data*** is informatie die niet beschikbaar is. 
+Dark data
+: Information that is not available but necessary to arrive at the correct answer.
 
-Deze ontbrekende informatie heeft de potentie om mensen te misleiden. De notie dat wij misleid kunnen worden is belangrijk omdat we daarmee ook moeten aannemen dat kunstmatige intelligentie misleid kan worden. 
+This missing information has the potential to mislead people. The notion that we can be misled is essential because it also implies that artificial intelligence can be misled!
 
-<br><br>
+::: {.callout-warning appearance="simple"}
+If you don’t have all the information, there is always the possibility of drawing an incorrect conclusion or making a wrong decision.
+:::
 
-**Als je niet alle informatie hebt, dan bestaat altijd de mogelijkheid dat je een foutieve conclusie trekt of een verkeerde beslissing neemt.**
-</div>
+:::
+::::
+
+
+
 
 ## In Practice
 ::::{.columns}
@@ -195,19 +206,22 @@ We now have a new problem:
 - we do not have the whole truth; but merely a sample of the truth
 - we do not even have the whole sample, but merely a sample of the sample of the truth. 
 
-Q4. What would be a simple solution to allowing for valid inferences on the incomplete sample? <br>
-Q5. Would that solution work in practice?
+
+::: {.callout-tip appearance="simple"}
+What would be a simple solution to allowing for valid inferences on the incomplete sample? Would that solution work in practice?
+:::
+
 
 :::
 ::::
 
 ## How to fix the missingness problem
 ::::{.columns}
-:::{.column width="60%"}
+:::{.column width="50%"}
 ![](img/11. missingness_solved.png){width=80%}
 :::
 
-::: {.column width="40%"}
+::: {.column width="50%"}
 There are two sources of uncertainty that we need to cover when analyzing incomplete data:
 
 1. **Uncertainty about the data values we don't have**:<br>when we don't know what the true observed value should be, we must create a distribution of values with proper variance (uncertainty).
@@ -233,9 +247,10 @@ For example:
 2. Analyzing incomplete data without a reference about the truth
 3. Estimate the effect between two things that can never occur together
 4. Detecting fraudulent transactions with only access to the own transaction history
-5. Mixing bonafide observations with bonafide non-observations
+5. Appealing to a new customer base with only data about existing customers
+6. Mixing bonafide observations with bonafide non-observations
 
-# What to do with uncertainty without a truth?
+# Case 1: How to evaluate without a truth?
 
 ## Scenario 
 Let's assume that we have an incomplete data set and that we can impute (fill in) the incomplete values under multiple candidate models
@@ -251,53 +266,23 @@ We have no idea about validity of either model's results: we would need either t
 We do have a constant in our problem: **the observed values**
 :::
 
-## Solution
-::::{.columns}
-:::{.column width="50%"}
-![](img/13. PPC_linear.png){width=80%}
-:::
-
-::: {.column width="50%"}
-We can *overimpute* the observed values and evaluate how well the models fit on the observed values. 
-
-The assumption would then be that any good imputation model would properly cover the observed data (i.e. would fit to the observed data). 
-
-- If we overimpute the observations multiple times we can calculate bias, intervals and coverage. 
-- The model that would be unbiased, properly covered and have the smallest interval width would then be the most efficient model. 
-
-The model to the left clearly does not fit well to the observations.
-:::
-::::
-
-::: footer
-Cai, M., van Buuren, S., & Vink, G. (2022). Graphical and numerical diagnostic tools to assess multiple imputation models by posterior predictive checking. 
-:::
-
-## Solution
+## Solution - overimpute the observed values
 ::::{.columns}
 :::{.column width="50%"}
 ![](img/12. PPC_quadratic.png){width=80%}
 :::
-
-::: {.column width="50%"}
-We can *overimpute* the observed values and evaluate how well the models fit on the observed values. 
-
-The assumption would then be that any good imputation model would properly cover the observed data (i.e. would fit to the observed data). 
-
-- If we overimpute the observations multiple times we can calculate bias, intervals and coverage. 
-- The model that would be unbiased, properly covered and have the smallest interval width would then be the most efficient model. 
-
-The model to the left fits quite well to the observations.
-
-**Can we infer truth?**
+:::{.column width="50%"}
+![](img/13. PPC_linear.png){width=80%}
 :::
+
+
 ::::
 
 ::: footer
 Cai, M., van Buuren, S., & Vink, G. (2022). Graphical and numerical diagnostic tools to assess multiple imputation models by posterior predictive checking. 
 :::
 
-# When you know you're wrong
+# Case 2: When you know you're wrong
 
 ## Scenario
 
@@ -327,14 +312,9 @@ We know:
 Every imputation will bias the results. For some we know the direction of the bias, for some we have no idea. We do not have access to the truth.
 :::
 
-## Now what?
-There is no solution to this problem
+### What would you do?
 
-1. Imputing `Not Applicable` values will have an effect on the inference
-2. Not imputing `Not Applicable` leaves us with no inference
-3. Ignoring `Not Applicable` leaves us with an unknown effect; we know from missing data theory that it will bias results and lead to invalid inference. 
-
-**Our solution**
+## Our solution
 We chose to impute the data as `1 (never)`. There are a couple of reasons why we think that this is the best defendable scenario.
 
 1. `Never` has a semantic similarity to a behaviour not being applicable. However,  `Never` implies intentionality; `Not Applicable` does not.

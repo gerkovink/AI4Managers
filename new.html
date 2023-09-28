@@ -347,7 +347,7 @@ Gerko Vink <a href="https://orcid.org/0000-0001-9767-1924" class="quarto-title-a
 <section id="disclaimer" class="slide level2">
 <h2>Disclaimer</h2>
 <p>I owe a debt of gratitude to many people as the thoughts and code in these slides are the process of years-long development cycles and discussions with my team, friends, colleagues and peers. When someone has contributed to the content of the slides, I have credited their authorship.</p>
-<p>Scientific references are in the footer. Opinions and figures are my own.</p>
+<p>Scientific references are in the footer. Opinions and figures are my own, AI-generated or directly linked.</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -416,16 +416,29 @@ Gerko Vink <a href="https://orcid.org/0000-0001-9767-1924" class="quarto-title-a
 <li>The answer will not be very <em>informative</em>.</li>
 <li>In order for our answer to be more informative, we need more <strong>information</strong></li>
 </ul>
-<p>Some sources of information can already tremendously guide the precision of our answe. ::: {.callout-note appearance=“simple”} # Bottom line Information bridges the answer to the truth. Too little information may lead you to a <em>false truth</em> :::</p>
+<p>Some sources of information can already tremendously guide the precision of our answer.</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>In Short</strong></p>
+</div>
+<div class="callout-content">
+<p>Information bridges the answer to the truth. Too little information may lead you to a <em>false truth</em>.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="confidence-intervals" class="slide level2">
-<h2>Confidence intervals</h2>
+<section id="confidence-in-the-answer" class="slide level2">
+<h2>Confidence in the answer</h2>
 <div class="columns">
-<div class="column" style="width:70%;">
+<div class="column" style="width:60%;">
 <p><img data-src="img/7.%20confidence_intervals.png" style="width:90.0%"></p>
-</div><div class="column" style="width:30%;">
-<p>Confidence intervals can be hugely informative!</p>
-<p>If we sample 100 samples from a population, then a <em>95% CI</em> will cover the population value at least 95 out of 100 times.</p>
+</div><div class="column" style="width:40%;">
+<p>An intuitive approach to evaluating an answer is confidence. In statistics, we often use confidence intervals. Discussing confidence can be hugely informative!</p>
+<p>If we sample 100 samples from a population, then a <em>95% CI</em> will cover the <strong>true</strong> population value <span style="text-decoration: underline;">at least 95 out of 100 times</span>.</p>
 <ul>
 <li>If the coverage &lt;95: bad estimation process with risk of errors and invalid inference</li>
 <li>If the coverage &gt;95: inefficient estimation process, but correct conclusions and valid inference. Lower statistical power.</li>
@@ -433,58 +446,81 @@ Gerko Vink <a href="https://orcid.org/0000-0001-9767-1924" class="quarto-title-a
 </div>
 </div>
 <div class="footer">
-<p>Neyman, J. (1934). On the Two Different Aspects of the Representative Method: The Method of Stratified Sampling and the Method of Purposive Selection. Journal of the Royal Statistical Society Series A: Statistics in Society, 97(4), 558-606.</p>
+<p>Neyman, J. (1934). On the Two Different Aspects of the Representative Method: The Method of Stratified Sampling and the Method of Purposive Selection. <br> Journal of the Royal Statistical Society Series A: Statistics in Society, 97(4), 558-606.</p>
 </div>
 </section>
-<section id="the-other-type-of-intervals" class="slide level2">
-<h2>The other type of intervals</h2>
+<section id="on-the-individual-level" class="slide level2">
+<h2>On the individual level</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><img data-src="img/8.%20prediction_intervals.png" style="width:90.0%"></p>
 </div><div class="column" style="width:40%;">
-<p>Prediction intervals can also be hugely informative!</p>
-<p>Prediction intervals are generally wider than confidence intervals</p>
+<p>Individual intervals can also be hugely informative!</p>
+<p>Individual intervals are generally wider than confidence intervals</p>
 <ul>
 <li>This is because it covers inherent uncertainty in the data point on top of sampling uncertainty</li>
-<li>Just like CIs, PIs will become more narrow (for locations) where more information is observed (less uncertainty)</li>
-<li>Usually this is at the location of the mean of the predicted values.</li>
 </ul>
-<p><br> <strong>Narrower intervals mean less uncertainty. It does not mean less bias!</strong></p>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Narrower intervals mean less uncertainty.</p>
+<p>It does not mean that the answer is correct!</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
 <section id="case-spaceshuttle-challenger" class="slide level2">
 <h2>Case: Spaceshuttle Challenger</h2>
-<div style="float: left; width: 40%;">
-<p><img data-src="img/chal.jpg" style="width:100.0%"></p>
-</div>
-<div style="float: right; width: 50%;">
+<p>36 years ago, on 28 January 1986, 73 seconds into its flight and at an altitude of 9 miles, the space shuttle Challenger experienced an enormous fireball caused by one of its two booster rockets and broke up. The crew compartment continued its trajectory, reaching an altitude of 12 miles, before falling into the Atlantic. All seven crew members, consisting of five astronauts and two payload specialists, were killed.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="img/chal.jpg" style="width:90.0%"></p>
+</div><div class="column" style="width:60%;">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="new_files/figure-revealjs/failure-1.png" width="384"></p>
+<p><img data-src="new_files/figure-revealjs/failure-1.png" width="576"></p>
 </div>
 </div>
 </div>
-<div style="clear: both;">
-
 </div>
-<p>36 years ago, on 28 January 1986, 73 seconds into its flight and at an altitude of 9 miles, the space shuttle Challenger experienced an enormous fireball caused by one of its two booster rockets and broke up. The crew compartment continued its trajectory, reaching an altitude of 12 miles, before falling into the Atlantic. All seven crew members, consisting of five astronauts and two payload specialists, were killed.</p>
 </section>
 <section id="nothing-happened-so-we-ignored-it" class="slide level2">
 <h2>Nothing happened, so we ignored it</h2>
-<div style="float: left; width: 50%;">
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="new_files/figure-revealjs/darkdata-1.png" width="384"></p>
+<p><img data-src="new_files/figure-revealjs/darkdata-1.png" width="480"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>In the decision to proceed with the launch, there was a presence of dark data. And no-one noticed!</p>
+<dl>
+<dt>Dark data</dt>
+<dd>
+Information that is not available but necessary to arrive at the correct answer.
+</dd>
+</dl>
+<p>This missing information has the potential to mislead people. The notion that we can be misled is essential because it also implies that artificial intelligence can be misled!</p>
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>If you don’t have all the information, there is always the possibility of drawing an incorrect conclusion or making a wrong decision.</p>
 </div>
 </div>
 </div>
-<div style="float: right; width: 50%;">
-<p>In de besluitvorming om de launch wel door te laten gaan was sprake van dark data.</p>
-<p><strong><em>Dark data</em></strong> is informatie die niet beschikbaar is.</p>
-<p>Deze ontbrekende informatie heeft de potentie om mensen te misleiden. De notie dat wij misleid kunnen worden is belangrijk omdat we daarmee ook moeten aannemen dat kunstmatige intelligentie misleid kan worden.</p>
-<p><br><br></p>
-<p><strong>Als je niet alle informatie hebt, dan bestaat altijd de mogelijkheid dat je een foutieve conclusie trekt of een verkeerde beslissing neemt.</strong></p>
+</div>
 </div>
 </section>
 <section id="in-practice" class="slide level2">
@@ -498,16 +534,25 @@ Gerko Vink <a href="https://orcid.org/0000-0001-9767-1924" class="quarto-title-a
 <li>we do not have the whole truth; but merely a sample of the truth</li>
 <li>we do not even have the whole sample, but merely a sample of the sample of the truth.</li>
 </ul>
-<p>Q4. What would be a simple solution to allowing for valid inferences on the incomplete sample? <br> Q5. Would that solution work in practice?</p>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>What would be a simple solution to allowing for valid inferences on the incomplete sample? Would that solution work in practice?</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
 <section id="how-to-fix-the-missingness-problem" class="slide level2">
 <h2>How to fix the missingness problem</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:50%;">
 <p><img data-src="img/11.%20missingness_solved.png" style="width:80.0%"></p>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:50%;">
 <p>There are two sources of uncertainty that we need to cover when analyzing incomplete data:</p>
 <ol type="1">
 <li><strong>Uncertainty about the data values we don’t have</strong>:<br>when we don’t know what the true observed value should be, we must create a distribution of values with proper variance (uncertainty).</li>
@@ -541,12 +586,13 @@ Gerko Vink <a href="https://orcid.org/0000-0001-9767-1924" class="quarto-title-a
 <li>Analyzing incomplete data without a reference about the truth</li>
 <li>Estimate the effect between two things that can never occur together</li>
 <li>Detecting fraudulent transactions with only access to the own transaction history</li>
+<li>Appealing to a new customer base with only data about existing customers</li>
 <li>Mixing bonafide observations with bonafide non-observations</li>
 </ol>
 </section>
 <section>
-<section id="what-to-do-with-uncertainty-without-a-truth" class="title-slide slide level1 center">
-<h1>What to do with uncertainty without a truth?</h1>
+<section id="case-1-how-to-evaluate-without-a-truth" class="title-slide slide level1 center">
+<h1>Case 1: How to evaluate without a truth?</h1>
 
 </section>
 <section id="scenario" class="slide level2">
@@ -568,39 +614,13 @@ Gerko Vink <a href="https://orcid.org/0000-0001-9767-1924" class="quarto-title-a
 </div>
 </div>
 </section>
-<section id="solution" class="slide level2">
-<h2>Solution</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="img/13.%20PPC_linear.png" style="width:80.0%"></p>
-</div><div class="column" style="width:50%;">
-<p>We can <em>overimpute</em> the observed values and evaluate how well the models fit on the observed values.</p>
-<p>The assumption would then be that any good imputation model would properly cover the observed data (i.e.&nbsp;would fit to the observed data).</p>
-<ul>
-<li>If we overimpute the observations multiple times we can calculate bias, intervals and coverage.</li>
-<li>The model that would be unbiased, properly covered and have the smallest interval width would then be the most efficient model.</li>
-</ul>
-<p>The model to the left clearly does not fit well to the observations.</p>
-</div>
-</div>
-<div class="footer">
-<p>Cai, M., van Buuren, S., &amp; Vink, G. (2022). Graphical and numerical diagnostic tools to assess multiple imputation models by posterior predictive checking.</p>
-</div>
-</section>
-<section id="solution-1" class="slide level2">
-<h2>Solution</h2>
+<section id="solution---overimpute-the-observed-values" class="slide level2">
+<h2>Solution - overimpute the observed values</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="img/12.%20PPC_quadratic.png" style="width:80.0%"></p>
 </div><div class="column" style="width:50%;">
-<p>We can <em>overimpute</em> the observed values and evaluate how well the models fit on the observed values.</p>
-<p>The assumption would then be that any good imputation model would properly cover the observed data (i.e.&nbsp;would fit to the observed data).</p>
-<ul>
-<li>If we overimpute the observations multiple times we can calculate bias, intervals and coverage.</li>
-<li>The model that would be unbiased, properly covered and have the smallest interval width would then be the most efficient model.</li>
-</ul>
-<p>The model to the left fits quite well to the observations.</p>
-<p><strong>Can we infer truth?</strong></p>
+<p><img data-src="img/13.%20PPC_linear.png" style="width:80.0%"></p>
 </div>
 </div>
 <div class="footer">
@@ -608,8 +628,8 @@ Gerko Vink <a href="https://orcid.org/0000-0001-9767-1924" class="quarto-title-a
 </div>
 </section></section>
 <section>
-<section id="when-you-know-youre-wrong" class="title-slide slide level1 center">
-<h1>When you know you’re wrong</h1>
+<section id="case-2-when-you-know-youre-wrong" class="title-slide slide level1 center">
+<h1>Case 2: When you know you’re wrong</h1>
 
 </section>
 <section id="scenario-1" class="slide level2">
@@ -647,16 +667,11 @@ Gerko Vink <a href="https://orcid.org/0000-0001-9767-1924" class="quarto-title-a
 </div>
 </div>
 </div>
+<h3 id="what-would-you-do">What would you do?</h3>
 </section>
-<section id="now-what" class="slide level2">
-<h2>Now what?</h2>
-<p>There is no solution to this problem</p>
-<ol type="1">
-<li>Imputing <code>Not Applicable</code> values will have an effect on the inference</li>
-<li>Not imputing <code>Not Applicable</code> leaves us with no inference</li>
-<li>Ignoring <code>Not Applicable</code> leaves us with an unknown effect; we know from missing data theory that it will bias results and lead to invalid inference.</li>
-</ol>
-<p><strong>Our solution</strong> We chose to impute the data as <code>1 (never)</code>. There are a couple of reasons why we think that this is the best defendable scenario.</p>
+<section id="our-solution" class="slide level2">
+<h2>Our solution</h2>
+<p>We chose to impute the data as <code>1 (never)</code>. There are a couple of reasons why we think that this is the best defendable scenario.</p>
 <ol type="1">
 <li><code>Never</code> has a semantic similarity to a behaviour not being applicable. However, <code>Never</code> implies intentionality; <code>Not Applicable</code> does not.</li>
 <li>We know the effect the imputation has on the inference: Filling in <code>Never</code> will underestimate intentional behaviours.</li>
@@ -671,7 +686,7 @@ Gerko Vink <a href="https://orcid.org/0000-0001-9767-1924" class="quarto-title-a
 </center>
 
 <img src="mice.png" class="slide-logo r-stretch"><div class="footer footer-default">
-<p>Gerko Vink @ ING - Sep 14, 2023, Amsterdam</p>
+<p>Gerko Vink @ AI for Managers - Sep 28, 2023, Utrecht</p>
 </div>
 </section></section>
     </div>
